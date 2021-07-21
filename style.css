@@ -2,6 +2,7 @@
     --bone-primary: #ebe4d5;
     --bone-secondary: #bebab2;
     --dark-theme-bg: #242424;
+    --dark-theme-bg-transparent: #242424aa;
     font-family: 'Ubuntu', sans-serif;
 }
 
@@ -53,7 +54,15 @@ body {
     left: 0;
     right: 0;
 }
-
+#screenSizeNote{
+    color:salmon;
+    display: none;
+}
+.container {
+    backdrop-filter: blur(10px);
+    width: 50vw;
+    background-color: var(--dark-theme-bg-transparent);
+}
 #hero h1 {
     margin: 0;
     font-size: 64px;
@@ -66,7 +75,25 @@ body {
     color: var(--bone-secondary);
 }
 
+#logger {
+    color: var(--bone-secondary);
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1.5rem;
+}
+#logger p {
+
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding-right: 10px;
+    text-align: right;
+}
 @media (max-width: 992px) {
+    .container {
+        width: 100vw;
+    }
+
     #hero {
         text-align: center;
         width: 100vw;
@@ -75,13 +102,20 @@ body {
     }
 
     #hero h1 {
-        font-size: 32px;
-        line-height: 36px;
+        font-size: 4rem;
     }
-
-    #hero p {
-        margin-top: 10px;
-        font-size: 20px;
-        line-height: 24px;
+    
+    #hero h2 {
+        font-size: 3rem;
+    }
+    
+    #hero h3 {
+        font-size: 3rem;
+    }
+    .icon img {
+        width: .5in;
+    }
+    #logger{
+        font-size: 2rem;
     }
 }
