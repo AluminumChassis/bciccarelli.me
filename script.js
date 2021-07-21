@@ -3,10 +3,13 @@ function log(x, isError = false){
     msg = "<p style='border-right:"+color+" 10px solid'>>" + x + "</p>"
     document.getElementById("logger").innerHTML += msg
 }
-tensorflowScript = "<script src=\"https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js\"></script>"
+tensorflowSource = "<script src=\"https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js\"></script>"
+tensorflowDemo = "<script src=\"tf_demo.js\"></script>"
 if (window && window.innerWidth > 640) {
-    document.write(tensorflowScript);
+    document.write(tensorflowSource);
     log("Loaded tfjs@2.0.0")
+    document.write(tensorflowDemo);
+    log("Loaded demo script")
     log("Demo coming soon")
 } else {
     log("Screen too small", true)
